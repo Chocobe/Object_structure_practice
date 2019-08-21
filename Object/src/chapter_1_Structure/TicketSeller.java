@@ -20,19 +20,26 @@ public class TicketSeller {
 //	}
 	
 	public void sellTo(Audience audience) {
-		if(audience.getBag().hasInvitation()) {
-			Ticket ticket = this.ticketOffice.getTicket();
-			audience.getBag().setTicket(ticket);
-			
-			System.out.println("입장권을 교환하여 입장합니다");
-			
-		} else {
-			Ticket ticket = this.ticketOffice.getTicket();
-			audience.getBag().minusAmount(ticket.getFee());
-			this.ticketOffice.plusAmount(ticket.getFee());
-			audience.getBag().setTicket(ticket);
-			
-			System.out.println("티켓을 구입하여 입장합니다");
-		}
+// Audience가 직접 Bag에 대해 처리하는 자율적인 존재로 만들기 위해,
+// Audience로 옮긴다.
+
+//		if(audience.getBag().hasInvitation()) {
+//			Ticket ticket = this.ticketOffice.getTicket();
+//			audience.getBag().setTicket(ticket);
+//			
+//			System.out.println("입장권을 교환하여 입장합니다");
+//			
+//		} else {
+//			Ticket ticket = this.ticketOffice.getTicket();
+//			audience.getBag().minusAmount(ticket.getFee());
+//			this.ticketOffice.plusAmount(ticket.getFee());
+//			audience.getBag().setTicket(ticket);
+//			
+//			System.out.println("티켓을 구입하여 입장합니다");
+//		}
+		
+		System.out.println("판매원이 티켓을 팔기위해...");
+		this.ticketOffice.plusAmount(audience.buy(this.ticketOffice.getTicket()));
+		
 	}
 }
