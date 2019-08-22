@@ -17,22 +17,21 @@ public class TicketOffice {
 	
 	
 // Ticket getter
-	public Ticket getTicket() {
+	private Ticket getTicket() {
 		System.out.println("매표소에서 티겟을 한장 뺍니다");
 		return this.tickets.remove(0);
 	}
 	
 	
 // plusAmount
-	public void plusAmount(long amount) {
+	private void plusAmount(long amount) {
 		System.out.println("매표소의 보유금액에 " + amount + "원 더해집니다");
 		this.amount += amount;
 	}
 	
 	
-// minusAmount
-	public void minusAmount(long amount) {
-		System.out.println("매표소의 보유금액에서 " + amount + "원 뺍니다");
-		this.amount -= amount;
+// TicketOffice의 자율권 찾기
+	public void sellTicketTo(Audience audience) {
+		plusAmount(audience.buy(getTicket()));
 	}
 }

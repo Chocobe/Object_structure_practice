@@ -39,7 +39,8 @@ public class TicketSeller {
 //		}
 		
 		System.out.println("판매원이 티켓을 팔기위해...");
-		this.ticketOffice.plusAmount(audience.buy(this.ticketOffice.getTicket()));
 		
+// TicketOffice를 자율적인 존재로 만들기
+		this.ticketOffice.sellTicketTo(audience);
 	}
 }
