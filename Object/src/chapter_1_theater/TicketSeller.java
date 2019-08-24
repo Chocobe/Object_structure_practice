@@ -1,4 +1,4 @@
-package chapter_1_Structure;
+package chapter_1_theater;
 
 public class TicketSeller {
 	private TicketOffice ticketOffice;
