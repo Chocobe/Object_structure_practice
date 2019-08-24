@@ -12,7 +12,7 @@
 
 >Sequence Condition과 PeriodCondition은 동일한 인터페이스를 공유하며 다형적인 협력에 참여할 수 있다.
 
-	* SequenceCondition 과 PeriodCondition은 동일한 ... (Sequence Condition에 공백문자가 있습니다.)
+		* SequenceCondition 과 PeriodCondition은 동일한 ... (Sequence Condition에 공백문자가 있습니다.)
 	
 
 1. 테스트
