@@ -23,31 +23,31 @@ public class Money {
 	}
 	
 	
-// plus
+// plus(사칙연산 : 더하기)
 	public Money plus(Money amount) {
 		return new Money(this.amount.add(amount.amount));
 	}
 	
 
-// minus
+// minus(사칙연산 : 빼기)
 	public Money minus(Money amount) {
 		return new Money(this.amount.subtract(amount.amount));
 	}
 	
 	
-// times
+// times(사칙연산 : 곱하기)
 	public Money times(double percent) {
 		return new Money(this.amount.multiply(BigDecimal.valueOf(percent)));
 	}
 	
 	
-// isLessThan
+// isLessThan(크기비교 : 작다?)
 	public boolean isLessThan(Money other) {
 		return amount.compareTo(other.amount) < 0;
 	}
 	
 	
-// isGreaterThanOrEqual
+// isGreaterThanOrEqual(크기비교 : 크거나 같다?)
 	public boolean isGreaterThanOrEqual(Money other) {
 		return amount.compareTo(other.amount) >= 0; 
 	}
