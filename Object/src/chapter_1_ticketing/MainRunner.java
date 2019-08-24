@@ -1,4 +1,4 @@
-package chapter_1_theater;
+package chapter_1_ticketing;
 
 public class MainRunner {
 	public static void main(String[] args) {

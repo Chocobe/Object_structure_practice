@@ -1,4 +1,4 @@
-package chapter_1_theater;
+package chapter_1_ticketing;
 
 import java.time.LocalDateTime;
 
