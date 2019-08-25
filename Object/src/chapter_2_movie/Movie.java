@@ -37,4 +37,10 @@ public class Movie {
 		
 		return fee.minus(discountPolicy.calculateDiscountAmount(screening));
 	}
+	
+	
+// 할인정책 변경 메소드
+	public void changeDiscountPolicy(DiscountPolicy discountPolicy) {
+		this.discountPolicy = discountPolicy;
+	}
 }
