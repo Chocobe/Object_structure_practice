@@ -27,6 +27,14 @@ public class Movie {
 	
 // 요금 계산
 	public Money calculateMovieFee(Screening screening) {
+
+// 할인이 없는 영화의 요금 계산 - 요금계산의 책임은 DiscountPolicy에서 해야 하지만,
+// Movie 클래스에서 예외처리 방식으로 처리했기 때문에 일관성이 무너진다.
+// : NoneDiscountPolicy 클래스에서 처리하자
+//		if(discountPolicy == null) {
+//			 return fee;
+//		}
+		
 		return fee.minus(discountPolicy.calculateDiscountAmount(screening));
 	}
 }

@@ -1,6 +1,6 @@
 package chapter_2_movie;
 
-public class AmountDiscountPolicy extends DiscountPolicy {
+public class AmountDiscountPolicy extends DefaultDiscountPolicy {
 	private Money discountAmount;
 	
 	

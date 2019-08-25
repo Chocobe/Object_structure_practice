@@ -31,6 +31,9 @@ public class MainRunner {
 										LocalTime.of(10, 0),
 										LocalTime.of(13, 59))));
 		
+		Movie starWars = new Movie("스타워즈", Duration.ofHours(210),
+						Money.wons(10000), new NoneDiscountPolicy());
+		
 		Screening screening = new Screening(
 						avatar, 
 						10, 

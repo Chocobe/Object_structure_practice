@@ -1,6 +1,6 @@
 package chapter_2_movie;
 
-public class PercentDiscountPolicy extends DiscountPolicy {
+public class PercentDiscountPolicy extends DefaultDiscountPolicy {
 	private double percent;
 	
 	
