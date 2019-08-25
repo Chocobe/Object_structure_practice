@@ -24,3 +24,4 @@
 1. (70p) ``상속``의 두번째 문단 3번째 줄 ``Movie의 calculateFee ...`` --> ``Movie의 calculateMovieFee``로 수정해야 할 거 같습니다.
 
 
+1. (79p) CRC카드에서 ``세번째 Movie`` --> ``DiscountCondition``인것 같습니다.
