@@ -12,7 +12,12 @@
 
 	> Sequence Condition과 PeriodCondition은 동일한 인터페이스를 공유하며 다형적인 협력에 참여할 수 있다.
 
-	* SequenceCondition 과 PeriodCondition은 동일한 ... (Sequence Condition에 공백문자가 있습니다.)
+	* SequenceCondition 과 PeriodCondition은 동일한 ... 
+	(Sequence Condition에 공백문자가 있습니다.)
 
 
-1. 테스트
+1. (69p) 그림 2.15에서 ``NoneDiscountPolicy`` 클래스의 메소드가 잘못 된거 같습니다.
+
+	* ``#getDiscountAmount()`` --> ``calculateDiscountAmount()``
+
+	
