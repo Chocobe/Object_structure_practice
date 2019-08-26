@@ -274,8 +274,8 @@
 							"left": 46,
 							"top": 312,
 							"width": 121,
-							"height": 40,
-							"text": "유저의 예매 실행"
+							"height": 53,
+							"text": "유저의 예매 실행\n(외부 엑터 - 유저)"
 						},
 						{
 							"_type": "UMLLinkView",
