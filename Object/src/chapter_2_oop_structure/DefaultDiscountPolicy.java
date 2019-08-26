@@ -1,4 +1,4 @@
-package chapter_2_movie;
+package chapter_2_oop_structure;
 
 import java.util.ArrayList;
 import java.util.Arrays;
