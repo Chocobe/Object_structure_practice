@@ -7,6 +7,16 @@ public class Reservation {
 	private int audienceCount;
 	
 	
+// 생성자
+	public Reservation(Customer customer, Screening screening,
+					Money fee, int audienceCount) {
+		this.customer = customer;
+		this.screening = screening;
+		this.fee = fee;
+		this.audienceCount = audienceCount;
+	}
+	
+	
 // customer
 	//accessor
 	public Customer getCustomer() {
