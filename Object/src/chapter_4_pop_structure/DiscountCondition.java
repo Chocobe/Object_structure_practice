@@ -34,7 +34,7 @@ public class DiscountCondition {
 	
 	
 	// 순번조건 Overloading
-	public boolean isDisCountable(int sequence) {
+	public boolean isDiscountable(int sequence) {
 		if(type != DiscountConditionType.SEQUENCE) {
 			throw new IllegalArgumentException();
 		}

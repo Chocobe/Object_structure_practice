@@ -1,6 +1,7 @@
 package chapter_4_pop_structure;
 
 import java.time.Duration;
+import java.time.LocalDateTime;
 import java.util.Collections;
 import java.util.List;
 
@@ -47,6 +48,25 @@ public class Movie {
 		}
 		
 		return fee;
+	}
+	
+	
+// 할인조건 검사
+	public boolean isDiscountable(LocalDateTime whenScreened, int sequence) {
+		for(DiscountCondition condition : discountConditions) {
+			if(condition.getType() == DiscountConditionType.PERIOD) {
+				if(condition.isDiscountable(whenScreened.getDayOfWeek(), whenScreened.toLocalTime())) {
+					return true;
+				}
+				
+			} else {
+				if(condition.isDiscountable(sequence)) {
+					return true;
+				}
+			}
+		}
+		
+		return false;
 	}
 	
 	
