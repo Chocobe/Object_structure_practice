@@ -17,4 +17,16 @@ public class Screening {
 	public Money calculateFee(int audienceCount) {
 		return movie.calculateMovieFee(this).times(audienceCount);
 	}
+	
+	
+// whenScreened accessor
+	public LocalDateTime getWhenScreened() {
+		return whenScreened;
+	}
+	
+	
+// sequence accressor
+	public int getSequence() {
+		return sequence;
+	}
 }

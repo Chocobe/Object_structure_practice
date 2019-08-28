@@ -37,8 +37,8 @@ public class Money {
 	
 	
 // 곱하기
-	public Money times(Money amount) {
-		return new Money(this.amount.multiply(amount.amount));
+	public Money times(double percent) {
+		return new Money(BigDecimal.valueOf(percent));
 	}
 	
 	
