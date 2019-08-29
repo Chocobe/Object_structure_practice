@@ -15,7 +15,7 @@ public class AmountDiscountMovie extends Movie {
 	
 	
 	@Override
-	public Money calculateDiscountAmount() {
+	protected Money calculateDiscountAmount() {
 		return discountAmount;
 	}
 }

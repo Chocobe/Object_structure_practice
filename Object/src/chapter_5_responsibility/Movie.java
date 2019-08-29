@@ -80,7 +80,7 @@ public abstract class Movie {
 //	}
 	
 
-	public abstract Money calculateDiscountAmount();
+	protected abstract Money calculateDiscountAmount();
 	
 // 할인정책을 개별 클래스로 나누자. (추상클래스로)
 //// 할인가 계산
@@ -117,4 +117,8 @@ public abstract class Movie {
 //		return Money.ZERO;
 //	}
 
+	// 자식 클래스에서 할인가를 구하기 위한 fee accessor
+	protected Money getFee() {
+		return fee;
+	}
 }
