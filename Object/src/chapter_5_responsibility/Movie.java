@@ -1,9 +1,10 @@
 package chapter_5_responsibility;
 
 import java.time.Duration;
+import java.util.Arrays;
 import java.util.List;
 
-public class Movie {
+public abstract class Movie {
 	private String title;
 	private Duration runningTime;
 	private Money fee;
@@ -15,10 +16,22 @@ public class Movie {
 //	private List<DiscountCondition> discountConditions;
 //	private List<SequenceCondition> sequenceConditions;
 //	private List<PeriodCondition> periodConditions;
+
 	
-	private MovieType movieType;
-	private Money discountAmount;
-	private double discountPercent;
+	// 할인정책을 따로이 클래스로 분리하기
+//	private MovieType movieType;
+//	private Money discountAmount;
+//	private double discountPercent;
+	
+	
+// 생성자
+	public Movie(String title, Duration runningTime, Money fee,
+					DiscountCondition ...discountAmounts) {
+		this.title = title;
+		this.runningTime = runningTime;
+		this.fee = fee;
+		this.discountConditions = Arrays.asList(discountAmounts);
+	}
 	
 	
 // 영화요금 계산	
@@ -51,8 +64,8 @@ public class Movie {
 //		// 참고 블로그 : https://blog.naver.com/lube12/221170814388
 //		// Stream 참고 블로그 : https://futurecreator.github.io/2018/08/26/java-8-streams/
 //	}
-	
-	
+//	
+//	
 //// PeriodCondition의 조건에 맞는가?
 //	private boolean checkPeriodCondition(Screening screening) {
 //		return periodConditions.stream()
@@ -66,39 +79,42 @@ public class Movie {
 //				.anyMatch(condition-> condition.isSatisfiedBy(screening));
 //	}
 	
+
+	public abstract Money calculateDiscountAmount();
 	
-// 할인가 계산
-	private Money calculateDiscountAmount() {
-		switch(movieType) {
-		case AMOUNT_DISCOUNT:
-			return calculateAmountDiscountAmount();
-		
-		case PERCENT_DISCOUNT:
-			return calculatePercentDiscountAmount();
-			
-		case NONE_DISCOUNT:
-			return calculateNoneDiscountAmount();
-		}
-		
-		throw new IllegalArgumentException();
-	}
-	
-	
-// 금액할인가 반환
-	private Money calculateAmountDiscountAmount() {
-		return discountAmount;
-	}
-	
-	
-// 금액할인 비율 반환
-	private Money calculatePercentDiscountAmount() {
-		return fee.times(discountPercent);
-	}
-	
-	
-// 할인 미적용
-	private Money calculateNoneDiscountAmount() {
-		return Money.ZERO;
-	}
+// 할인정책을 개별 클래스로 나누자. (추상클래스로)
+//// 할인가 계산
+//	private Money calculateDiscountAmount() {
+//		switch(movieType) {
+//		case AMOUNT_DISCOUNT:
+//			return calculateAmountDiscountAmount();
+//		
+//		case PERCENT_DISCOUNT:
+//			return calculatePercentDiscountAmount();
+//			
+//		case NONE_DISCOUNT:
+//			return calculateNoneDiscountAmount();
+//		}
+//		
+//		throw new IllegalArgumentException();
+//	}
+//	
+//	
+//// 금액할인가 반환
+//	private Money calculateAmountDiscountAmount() {
+//		return discountAmount;
+//	}
+//	
+//	
+//// 금액할인 비율 반환
+//	private Money calculatePercentDiscountAmount() {
+//		return fee.times(discountPercent);
+//	}
+//	
+//	
+//// 할인 미적용
+//	private Money calculateNoneDiscountAmount() {
+//		return Money.ZERO;
+//	}
 
 }
