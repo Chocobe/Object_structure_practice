@@ -1,6 +1,7 @@
 package chapter_5_responsibility;
 
-public class SequenceCondition {
+//DiscountCondition 역할을 할당 -> implements DiscountCondition
+public class SequenceCondition implements DiscountCondition {
 	private int sequence;
 	
 	

@@ -3,7 +3,8 @@ package chapter_5_responsibility;
 import java.time.DayOfWeek;
 import java.time.LocalTime;
 
-public class PeriodCondition {
+// DiscountCondition 역할을 할당 -> implements DiscountCondition
+public class PeriodCondition implements DiscountCondition {
 	private DayOfWeek dayOfWeek;
 	private LocalTime startTime;
 	private LocalTime endTime;

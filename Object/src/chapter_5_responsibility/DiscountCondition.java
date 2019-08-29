@@ -1,7 +1,8 @@
 package chapter_5_responsibility;
 
-public class DiscountCondition {
-		
+// PeriodCondition과 SequenceCondition의 역할로 만들어 준다. (interface)
+public interface DiscountCondition {
+	boolean isSatisfiedBy(Screening screnning);
 	
 // 기간조건과 순서조건 두개의 독립된 타입을 개별 클래스로 분리하기
 	
