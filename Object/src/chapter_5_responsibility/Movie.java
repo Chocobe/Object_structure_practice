@@ -7,7 +7,11 @@ public class Movie {
 	private String title;
 	private Duration runningTime;
 	private Money fee;
-	private List<DiscountCondition> discountConditions;
+	
+	// DiscountCondition 클래스를 SequenceCondition, PeriodCondition 으로 나눔
+//	private List<DiscountCondition> discountConditions;
+	private List<SequenceCondition> sequenceConditions;
+	private List<PeriodCondition> periodConditions;
 	
 	private MovieType movieType;
 	private Money discountAmount;
@@ -26,11 +30,28 @@ public class Movie {
 	
 // 할인여부 검사
 	private boolean isDiscountable(Screening screening) {
-		return discountConditions.stream().anyMatch(
-						condition -> condition.isSatisfiedBy(screening));
+		return checkPeriodCondition(screening) || checkSequenceCondition(screening);
+		
+		// DiscountCondition을 SequenceCondition, PeriodCondition 으로 나눔
+//		return discountConditions.stream().anyMatch(
+//						condition -> condition.isSatisfiedBy(screening));
 		
 		// 참고 블로그 : https://blog.naver.com/lube12/221170814388
 		// Stream 참고 블로그 : https://futurecreator.github.io/2018/08/26/java-8-streams/
+	}
+	
+	
+// PeriodCondition의 조건에 맞는가?
+	private boolean checkPeriodCondition(Screening screening) {
+		return periodConditions.stream()
+				.anyMatch(condition -> condition.isSatisfiedBy(screening));
+	}
+	
+	
+// SequenceCondition의 조건에 맞는가?
+	private boolean checkSequenceCondition(Screening screening) {
+		return sequenceConditions.stream()
+				.anyMatch(condition-> condition.isSatisfiedBy(screening));
 	}
 	
 	
