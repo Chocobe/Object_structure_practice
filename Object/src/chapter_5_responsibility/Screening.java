@@ -29,4 +29,10 @@ public class Screening {
 	public int getSequence() {
 		return sequence;
 	}
+	
+	
+// 원래 요금 accessor
+	public Money getFee() {
+		return movie.getFee();
+	}
 }

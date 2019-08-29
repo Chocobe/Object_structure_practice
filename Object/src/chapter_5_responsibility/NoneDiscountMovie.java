@@ -1,17 +1,14 @@
 package chapter_5_responsibility;
 
-import java.time.Duration;
-
-public class NoneDiscountMovie extends Movie {
+public class NoneDiscountMovie extends DiscountPolicy {
 // 생성자
-	public NoneDiscountMovie(String title, Duration runningTime, Money fee,
-					DiscountCondition ...conditions) {
-		super(title, runningTime, fee, conditions);
+	public NoneDiscountMovie(DiscountCondition ...conditions) {
+		super(conditions);
 	}
 	
 	
 	@Override
-	public Money calculateDiscountAmount() {
+	protected Money getDiscountAmount(Screening screening) {
 		return Money.ZERO;
 	}
 }
