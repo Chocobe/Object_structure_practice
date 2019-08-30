@@ -32,8 +32,11 @@ public class ReservationAgency {
 // 요금 할인 해주기
 	private Money calculateFee(Screening screening, boolean discountable, int audienceCount) {
 		if(discountable) {
-			return screening.getMovie().getFee().minus(calculateDiscountedFee(screening.getMovie())).times(audienceCount);
+			return screening.getMovie().getFee().minus(
+							calculateDiscountedFee(screening.getMovie())).times(audienceCount);
 		}
+		
+		return screening.getMovie().getFee();
 	}
 	
 	private Money calculateDiscountedFee(Movie movie) {
@@ -67,6 +70,7 @@ public class ReservationAgency {
 // 예약하기
 	public Reservation reserve(Screening screening, Customer customer, int audienceCount) {
 		boolean discountable = checkDiscountable(screening);
+		
 //		Movie movie = screening.getMovie();
 //		
 //		boolean discountable = false;
@@ -86,29 +90,33 @@ public class ReservationAgency {
 //			}			
 //		}
 		
-		Money fee;
-		if(discountable) {
-			Money discountAmount = Money.ZERO;
-			
-			switch(movie.getMovieType()) {
-			case PERCENT_DISCOUNT:
-				discountAmount = movie.getFee().times(movie.getDiscountPercent());
-				break;
-				
-			case AMOUNT_DISCOUNT:
-				discountAmount = movie.getDiscountAmount();
-				break;
-				
-			case NONE_DISCOUNT:
-				discountAmount = Money.ZERO;
-				break;
-			}
-			
-			fee = movie.getFee().minus(discountAmount).times(audienceCount);
-			
-		} else {
-			fee = movie.getFee();
-		}
+		
+		Money fee = calculateFee(screening, discountable, audienceCount);
+		
+//		Money fee;
+//		if(discountable) {
+//			Money discountAmount = Money.ZERO;
+//			
+//			switch(movie.getMovieType()) {
+//			case PERCENT_DISCOUNT:
+//				discountAmount = movie.getFee().times(movie.getDiscountPercent());
+//				break;
+//				
+//			case AMOUNT_DISCOUNT:
+//				discountAmount = movie.getDiscountAmount();
+//				break;
+//				
+//			case NONE_DISCOUNT:
+//				discountAmount = Money.ZERO;
+//				break;
+//			}
+//			
+//			fee = movie.getFee().minus(discountAmount).times(audienceCount);
+//			
+//		} else {
+//			fee = movie.getFee();
+//		}
+		
 		
 		return new Reservation(customer, screening, fee, audienceCount);
 	}
