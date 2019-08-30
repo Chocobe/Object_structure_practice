@@ -1,4 +1,4 @@
-package chapter_2_pop_origin;
+package chapter_4_pop_origin;
 
 public class ReservationAgency {
 	public Reservation reserve(Screening screening, Customer customer, int audienceCount) {
