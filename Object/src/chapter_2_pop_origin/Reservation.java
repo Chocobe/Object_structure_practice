@@ -1,4 +1,4 @@
-package chapter_5_refactoring;
+package chapter_2_pop_origin;
 
 public class Reservation {
 	private Customer customer;

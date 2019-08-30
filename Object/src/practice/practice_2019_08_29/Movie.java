@@ -1,4 +1,4 @@
-package practice_2019_08_29;
+package practice.practice_2019_08_29;
 
 import java.time.Duration;
 

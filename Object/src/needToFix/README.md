@@ -45,3 +45,10 @@
 	* ``Movie 클래스`` -> ``DiscountPolicy 클래스`` 로 변경
 	
 		* 메소드 : calculateDiscountAmount()
+		
+		
+1. (170p) ``calculateNoneDiscountedFee(Movie movie) 메소드의 반환값이 잘못된 것 같습니다.
+
+	* ``return movie.getFee();`` -> ``return Money.ZERO;``
+	
+	* ``calculate----DiscountedFee(Movie movie)`` 메소드 들은 할인해줄 차감액을 계산하는 부분인데, 원래 가격을 반환하고 있습니다.

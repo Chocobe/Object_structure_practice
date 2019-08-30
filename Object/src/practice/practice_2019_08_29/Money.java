@@ -1,4 +1,4 @@
-package chapter_5_refactoring;
+package practice.practice_2019_08_29;
 
 import java.math.BigDecimal;
 
@@ -7,12 +7,12 @@ public class Money {
 	private BigDecimal amount;
 	
 	
-// 생성자
+// 생성자(정적 펙토리 메소드 패턴)
 	private Money(BigDecimal amount) {
 		this.amount = amount;
 	}
 	
-	
+
 // 정적 펙토리 메소드 패턴
 	public static Money wons(double amount) {
 		return new Money(BigDecimal.valueOf(amount));
@@ -25,7 +25,7 @@ public class Money {
 	
 // 더하기
 	public Money plus(Money amount) {
-		return new Money(this.amount.subtract(amount.amount));
+		return new Money(this.amount.add(amount.amount));
 	}
 	
 	
@@ -35,20 +35,27 @@ public class Money {
 	}
 	
 	
-// 곱하기
-	public Money times(double percent) {
-		return new Money(this.amount.multiply(BigDecimal.valueOf(percent)));
-	}
-	
-	
-// 크거나 같다?
+// 크거나 같은가?
 	public boolean greaterThanOrEqual(Money amount) {
-		return this.amount.compareTo(amount.amount) >= 0; 
+		return this.amount.compareTo(amount.amount) >= 0;
 	}
 	
 	
-// 작다?
+// 적은가?
 	public boolean lessThan(Money amount) {
-		return this.amount.compareTo(amount.amount) < 0;
+		return this.amount.compareTo(amount.amount) < 0; 
 	}
+	
+	
+// 같은가?
+	public boolean equal(Money amount) {
+		return this.amount.compareTo(amount.amount) == 0;
+	}
+	
+	
+// 돈 출력
+	public void printAmount() {
+		System.out.println("[돈] : " + amount + " 원");
+	}
+	
 }
