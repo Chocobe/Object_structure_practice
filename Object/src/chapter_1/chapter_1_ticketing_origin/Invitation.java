@@ -1,5 +1,7 @@
 package chapter_1.chapter_1_ticketing_origin;
 
-public class Invitation {
+import java.time.LocalDateTime;
 
+public class Invitation {
+	private LocalDateTime when;
 }
