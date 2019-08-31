@@ -15,9 +15,14 @@ public class MainRunner {
 		
 		// 이벤트 생성
 		Event meeting= new Event("회의", 
-						LocalDateTime.of(2019, 5, 8, 10, 30), 
+						LocalDateTime.of(2019, 5, 9, 10, 30), 
 						Duration.ofMinutes(30));
 		
+		assert meeting.isSatisfied(schedule) == false;
+		meeting.reschedule(schedule);		
 		
+		assert meeting.isSatisfied(schedule) == true;
+		
+		System.out.println("정상 종료");
 	}
 }
