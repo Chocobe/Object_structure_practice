@@ -1,4 +1,4 @@
-package chapter_1_ticketing;
+package chapter_1_ticketing_origin;
 
 public class Ticket {
 	private long fee = 9000;

@@ -1,4 +1,4 @@
-package chapter_1_ticketing;
+package chapter_1_ticketing_origin;
 
 public class Audience {
 	private Bag bag;
