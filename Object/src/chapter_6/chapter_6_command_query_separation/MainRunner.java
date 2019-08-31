@@ -1,11 +1,22 @@
 package chapter_6.chapter_6_command_query_separation;
 
+import java.time.DayOfWeek;
 import java.time.Duration;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 public class MainRunner {
 	public static void main(String[] args) {
+		// 이벤트 생성
 		Event event = new Event("회의", 
-						LocalDateTime.of(2019, 5, 8, 10, 30), Duration.ofMinutes(30));
+						LocalDateTime.of(2019, 5, 8, 10, 30), 
+						Duration.ofMinutes(30));
+		
+		// 반복일정 생성
+		RecurringSchedule schedule = new RecurringSchedule("회의", 
+						DayOfWeek.WEDNESDAY, 
+						LocalTime.of(10, 30), 
+						Duration.ofMinutes(30));
+		
 	}
 }
