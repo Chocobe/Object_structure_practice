@@ -14,4 +14,6 @@ public class Event {
 		this.from = from;
 		this.duration = duration;
 	}
+	
+	
 }
