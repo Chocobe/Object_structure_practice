@@ -1,4 +1,4 @@
-package chapter_6_refactoring_ticketing;
+package chapter_6.chapter_6_refactoring_ticketing;
 
 import java.time.LocalDateTime;
 
