@@ -60,3 +60,7 @@
 1. (285p) 본문 두번째 단락 첫번째 줄에 의미가 반대인것 같습니다.
 
 	* ``여기서 변하는 부분을 고정하고 변하지 않는 부분을 생략하는..`` -> ``여기서 변하지 않는 부분을 고정하고 변하는 부분을 생략하는..`` 으로 수정해야 할 것 같습니다.
+	
+1. (290p) 두번째 코드블록에서 ``public Money getAvatarFee()``의 코드를 수정해야 할 것 같습니다.
+
+	* ``Movie avatar = factory.createMadMaxMovie();`` -> ``Movie avatar = factory.createAvatarMovie();``
