@@ -53,6 +53,9 @@
 	
 	* ``calculate----DiscountedFee(Movie movie)`` 메소드 들은 할인해줄 차감액을 계산하는 부분인데, 원래 가격을 반환하고 있습니다.
 	
+1. (285p) 코드에서 ``calculateDiscountAmount(Screening screening) 메소드의 리턴 부분이 잘못된 것 같습니다.
+
+	* ``return getDiscountedFee(screening);`` -> ``return getDiscountAmount(screening);``
 	
 1. (285p) 본문 두번째 단락 첫번째 줄에 의미가 반대인것 같습니다.
 
