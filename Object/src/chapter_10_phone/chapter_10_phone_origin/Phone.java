@@ -7,13 +7,15 @@ import java.util.List;
 public class Phone {
 	private Money amount;
 	private Duration seconds;
+	private double taxRate;
 	private List<Call> calls = new ArrayList<Call>();
 	
 	
 // 생성자
-	public Phone(Money amount, Duration seconds) {
+	public Phone(Money amount, Duration seconds, double taxRate) {
 		this.amount = amount;
 		this.seconds = seconds;
+		this.taxRate = taxRate;
 	}
 	
 	
@@ -50,6 +52,6 @@ public class Phone {
 							call.getDuration().getSeconds() / seconds.getSeconds()));
 		}
 		
-		return result;
+		return result.plus(result.times(taxRate));
 	}
 }
