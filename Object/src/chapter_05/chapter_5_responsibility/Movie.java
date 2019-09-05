@@ -1,0 +1,133 @@
+package chapter_05.chapter_5_responsibility;
+
+import java.time.Duration;
+
+public abstract class Movie {
+	private String title;
+	private Duration runningTime;
+	private Money fee;
+	
+	private DiscountPolicy discountPolicy;
+	
+// DiscountPolicy 인터페이스에 포함
+//	private List<DiscountCondition> discountConditions;	
+
+	// DiscountCondition을 SequenceCondition과 PeriodCondition의 역할로 대체 (다형성 사용)
+	// DiscountCondition 클래스를 SequenceCondition, PeriodCondition 으로 나눔
+//	private List<DiscountCondition> discountConditions;
+//	private List<SequenceCondition> sequenceConditions;
+//	private List<PeriodCondition> periodConditions;
+
+	
+	// 할인정책을 따로이 클래스로 분리하기
+//	private MovieType movieType;
+//	private Money discountAmount;
+//	private double discountPercent;
+	
+	
+// 생성자
+	public Movie(String title, Duration runningTime, Money fee,
+					DiscountPolicy discountPolicy) {
+		this.title = title;
+		this.runningTime = runningTime;
+		this.fee = fee;
+		this.discountPolicy = discountPolicy;
+	}
+	
+	
+// 영화요금 계산	
+	public Money calculateMovieFee(Screening screening) {
+		return fee.minus(discountPolicy.calculateDiscountAmount(screening));
+	}
+	
+
+// 할인정책에서 책임질 일
+	
+//// 할인여부 검사
+//	private boolean isDiscountable(Screening screening) {
+//		return discountConditions.stream().anyMatch(
+//						condition -> condition.isSatisfiedBy(screening));
+//	}
+	
+	
+// DiscountCondition을 SequenceCondition과 PeriodCondition의 역할로 대체	
+
+//// 할인여부 검사
+//	private boolean isDiscountable(Screening screening) {
+//		return checkPeriodCondition(screening) || checkSequenceCondition(screening);
+//		
+//		// DiscountCondition을 SequenceCondition, PeriodCondition 으로 나눔
+////		return discountConditions.stream().anyMatch(
+////						condition -> condition.isSatisfiedBy(screening));
+//		
+//		// 참고 블로그 : https://blog.naver.com/lube12/221170814388
+//		// Stream 참고 블로그 : https://futurecreator.github.io/2018/08/26/java-8-streams/
+//	}
+//	
+//	
+//// PeriodCondition의 조건에 맞는가?
+//	private boolean checkPeriodCondition(Screening screening) {
+//		return periodConditions.stream()
+//				.anyMatch(condition -> condition.isSatisfiedBy(screening));
+//	}
+//	
+//	
+//// SequenceCondition의 조건에 맞는가?
+//	private boolean checkSequenceCondition(Screening screening) {
+//		return sequenceConditions.stream()
+//				.anyMatch(condition-> condition.isSatisfiedBy(screening));
+//	}
+	
+
+
+// 할인 정책에 대한 책임을 DiscountPolicy 인터페이스로 넘긴다.
+	
+//	protected abstract Money calculateDiscountAmount();
+//	
+//// 할인정책을 개별 클래스로 나누자. (추상클래스로)
+////// 할인가 계산
+////	private Money calculateDiscountAmount() {
+////		switch(movieType) {
+////		case AMOUNT_DISCOUNT:
+////			return calculateAmountDiscountAmount();
+////		
+////		case PERCENT_DISCOUNT:
+////			return calculatePercentDiscountAmount();
+////			
+////		case NONE_DISCOUNT:
+////			return calculateNoneDiscountAmount();
+////		}
+////		
+////		throw new IllegalArgumentException();
+////	}
+////	
+////	
+////// 금액할인가 반환
+////	private Money calculateAmountDiscountAmount() {
+////		return discountAmount;
+////	}
+////	
+////	
+////// 금액할인 비율 반환
+////	private Money calculatePercentDiscountAmount() {
+////		return fee.times(discountPercent);
+////	}
+////	
+////	
+////// 할인 미적용
+////	private Money calculateNoneDiscountAmount() {
+////		return Money.ZERO;
+////	}
+
+
+	// 자식 클래스에서 할인가를 구하기 위한 fee accessor
+	protected Money getFee() {
+		return fee;
+	}
+	
+	
+	// 정책 교체하기
+	public void changeDiscountPolicy(DiscountPolicy discountPolicy) {
+		this.discountPolicy = discountPolicy;
+	}
+}
