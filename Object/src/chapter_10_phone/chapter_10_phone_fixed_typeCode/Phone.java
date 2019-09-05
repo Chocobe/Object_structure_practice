@@ -85,11 +85,11 @@ public class Phone {
 				
 			} else {
 				if(call.getFrom().getHour() >= LATE_NIGHT_HOUR) {
-					result.plus(nightlyAmount.times(
+					result = result.plus(nightlyAmount.times(
 									call.getDuration().getSeconds() / seconds.getSeconds()));
 					
 				} else {
-					result.plus(regularAmount.times(
+					result = result.plus(regularAmount.times(
 									call.getDuration().getSeconds() / seconds.getSeconds()));
 				}
 			}
