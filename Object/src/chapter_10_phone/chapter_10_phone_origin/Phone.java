@@ -23,19 +23,19 @@ public class Phone {
 	}
 	
 	
-// 전화 내역 getter
+// 통화내역 getter
 	public List<Call> getCalls() {
 		return calls;
 	}
 	
 	
-// 단위 요금 getter
+// 단위요금 getter
 	public Money getAmount() {
 		return amount;
 	}
 	
 	
-// 단위 시간 getter
+// 단위시간 getter
 	public Duration getSeconds() {
 		return seconds;
 	}

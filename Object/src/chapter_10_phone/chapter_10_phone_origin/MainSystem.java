@@ -16,5 +16,11 @@ public class MainSystem {
 						LocalDateTime.of(2018, 1, 2, 12, 11, 0)));
 		
 		phone.calculateFee().printer();
+		
+		
+		NightlyDiscountPhone nightPhone = new NightlyDiscountPhone(
+						Money.wons(2), Money.wons(5), Duration.ofSeconds(10));
+		
+		
 	}
 }
