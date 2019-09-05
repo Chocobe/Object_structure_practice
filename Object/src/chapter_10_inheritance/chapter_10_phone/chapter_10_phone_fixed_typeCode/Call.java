@@ -1,4 +1,4 @@
-package chapter_10_phone.chapter_10_phone_fixed_typeCode;
+package chapter_10_inheritance.chapter_10_phone.chapter_10_phone_fixed_typeCode;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
