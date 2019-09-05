@@ -1,23 +1,23 @@
 package chapter_10_inheritance.chapter_10_phone.chapter_10_phone_fixed_inheritance_2;
 
-import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Phone {
-	private Money amount;
-	private Duration seconds;
+public abstract class Phone {
+	private double taxRate;
 	private List<Call> calls = new ArrayList<Call>();
 	
 	
 // 생성자
-	public Phone(Money amount, Duration seconds) {
-		this.amount = amount;
-		this.seconds = seconds;
+	public Phone(double taxRate) {
+		this.taxRate = taxRate;
 	}
 	
 	
-// 요금 계산하기
+// Call 하나당 요금계산
+	abstract protected Money calculateCallFee(Call call);
+	
+	
 	public Money calculateFee() {
 		Money result = Money.ZERO;
 		
@@ -25,12 +25,11 @@ public class Phone {
 			result = result.plus(calculateCallFee(call));
 		}
 		
-		return result;
+		return result.plus(result.times(taxRate));
 	}
 	
 	
-// Call 하나에 대한 요금 계산
-	private Money calculateCallFee(Call call) {
-		return amount.times(call.getDuration().getSeconds() / seconds.getSeconds()); 
+	public void call(Call call) {
+		calls.add(call);
 	}
 }
