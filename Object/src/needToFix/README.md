@@ -53,14 +53,28 @@
 	
 	* ``calculate----DiscountedFee(Movie movie)`` 메소드 들은 할인해줄 차감액을 계산하는 부분인데, 원래 가격을 반환하고 있습니다.
 	
+	
 1. (285p) 코드에서 ``calculateDiscountAmount(Screening screening) 메소드의 리턴 부분이 잘못된 것 같습니다.
 
 	* ``return getDiscountedFee(screening);`` -> ``return getDiscountAmount(screening);``
+	
 	
 1. (285p) 본문 두번째 단락 첫번째 줄에 의미가 반대인것 같습니다.
 
 	* ``여기서 변하는 부분을 고정하고 변하지 않는 부분을 생략하는..`` -> ``여기서 변하지 않는 부분을 고정하고 변하는 부분을 생략하는..`` 으로 수정해야 할 것 같습니다.
 	
+	
 1. (290p) 두번째 코드블록에서 ``public Money getAvatarFee()``의 코드를 수정해야 할 것 같습니다.
 
 	* ``Movie avatar = factory.createMadMaxMovie();`` -> ``Movie avatar = factory.createAvatarMovie();``
+	
+	
+1. (355p) 코드 블록 중, 추상클래스 ``Phone``의 메소드 중, ``call(Call call)``메소드가 빠진것 같습니다. (핵심과는 무관하지만, 테스트로 실행하기 위해선 필요했었습니다.)
+
+	```java
+	public void Call(Call call) {
+		calls.add(call);
+	}```
+	
+	
+1. next

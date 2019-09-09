@@ -4,14 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Phone {
-	private double taxRate;
 	private List<Call> calls = new ArrayList<Call>();
-	
-	
-// 생성자
-	public Phone(double taxRate) {
-		this.taxRate = taxRate;
-	}
 	
 	
 // Call 하나당 요금계산
@@ -25,7 +18,7 @@ public abstract class Phone {
 			result = result.plus(calculateCallFee(call));
 		}
 		
-		return result.plus(result.times(taxRate));
+		return result;
 	}
 	
 	
