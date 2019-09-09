@@ -78,7 +78,7 @@
 	```
 	
 	
-1. (365p) 두번째 코드블록의 클래스 명이 누락된 것 같습니다.
+1. (365p) 두번째 코드블록의 클래스 명에 **Rate**단어가 누락된 것 같습니다.
 
 	```java
 	public class TaxableAndDiscountableNightlyDiscountPhone {}
@@ -88,5 +88,5 @@
 	public class TaxableAndRateDiscountableNightlyDiscountPhone {}
 	```
 	
-	
+	* (366p)와 (367p)의 클래스 다이어그램에는 해당 클래스명이 올바르게 적혀 있습니다. 
 	
