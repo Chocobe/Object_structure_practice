@@ -8,9 +8,9 @@ public class TaxableAndRateDiscountableRegularPhone
 	
 	
 	public TaxableAndRateDiscountableRegularPhone(
-			Money amount, Duration duration, double taxRate,
+			Money amount, Duration seconds, double taxRate,
 			Money discountAmount) {
-		super(amount, duration, taxRate);
+		super(amount, seconds, taxRate);
 		this.discountAmount = discountAmount;
 	}
 	
