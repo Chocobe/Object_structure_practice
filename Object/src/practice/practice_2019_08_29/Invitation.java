@@ -1,6 +1,5 @@
 package practice.practice_2019_08_29;
 
-@SuppressWarnings("unused")
 public class Invitation {
 	private Content content;
 	

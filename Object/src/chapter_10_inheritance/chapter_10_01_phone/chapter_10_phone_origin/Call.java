@@ -1,4 +1,4 @@
-package chapter_10_inheritance.chapter_10_phone.chapter_10_phone_create_inheritance;
+package chapter_10_inheritance.chapter_10_01_phone.chapter_10_phone_origin;
 
 import java.time.Duration;
 import java.time.LocalDateTime;

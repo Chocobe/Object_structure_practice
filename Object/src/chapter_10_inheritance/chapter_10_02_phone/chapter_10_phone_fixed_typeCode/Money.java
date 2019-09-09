@@ -1,4 +1,4 @@
-package chapter_10_inheritance.chapter_10_phone.chapter_10_phone_fixed_inheritance_2;
+package chapter_10_inheritance.chapter_10_02_phone.chapter_10_phone_fixed_typeCode;
 
 import java.math.BigDecimal;
 

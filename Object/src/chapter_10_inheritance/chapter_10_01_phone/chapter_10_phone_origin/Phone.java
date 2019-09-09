@@ -1,11 +1,10 @@
-package chapter_10_inheritance.chapter_10_phone.chapter_10_phone_create_inheritance;
+package chapter_10_inheritance.chapter_10_01_phone.chapter_10_phone_origin;
 
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Phone {
-	
 	private Money amount;
 	private Duration seconds;
 	private double taxRate;
@@ -18,7 +17,6 @@ public class Phone {
 		this.seconds = seconds;
 		this.taxRate = taxRate;
 	}
-	
 	
 	
 // 전화하기
@@ -44,15 +42,11 @@ public class Phone {
 		return seconds;
 	}
 	
-// 세율 getter
-	public double getTaxRate() {
-		return taxRate;
-	}
-	
 	
 // 요금 계산하기
 	public Money calculateFee() {
 		Money result = Money.ZERO;
+		
 		for(Call call : calls) {
 			result = result.plus(amount.times(
 							call.getDuration().getSeconds() / seconds.getSeconds()));
