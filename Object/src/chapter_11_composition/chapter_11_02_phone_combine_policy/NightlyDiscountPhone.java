@@ -29,4 +29,11 @@ public class NightlyDiscountPhone extends Phone {
 			return regularAmount.times(call.getDuration().getSeconds() / seconds.getSeconds());
 		}
 	}
+	
+	
+	// 반복되므로, 부모클래스에서 정의
+//	@Override
+//	protected Money afterCalculated(Money fee) {
+//		return fee;
+//	}
 }

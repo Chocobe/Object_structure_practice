@@ -19,4 +19,11 @@ public class RegularPhone extends Phone {
 	protected Money calculateCallFee(Call call) {
 		return amount.times(call.getDuration().getSeconds() / seconds.getSeconds()); 
 	}
+	
+
+	// 반복되므로, 부모클래스에서 정의
+//	@Override
+//	protected Money afterCalculated(Money fee) {
+//		return fee;
+//	}
 }
