@@ -1,4 +1,4 @@
-package chapter_10_inheritance.chapter_10_04_phone.chapter_10_phone_fixed_inheritance_2;
+package chapter_10_inheritance.chapter_10_phone.chapter_10_04_phone_fixed_inheritance_2;
 
 import java.util.ArrayList;
 import java.util.List;

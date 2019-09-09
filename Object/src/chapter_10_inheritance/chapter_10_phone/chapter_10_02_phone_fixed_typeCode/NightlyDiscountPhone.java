@@ -1,4 +1,4 @@
-package chapter_10_inheritance.chapter_10_02_phone.chapter_10_phone_fixed_typeCode;
+package chapter_10_inheritance.chapter_10_phone.chapter_10_02_phone_fixed_typeCode;
 
 public class NightlyDiscountPhone {
 	// 사용안함
