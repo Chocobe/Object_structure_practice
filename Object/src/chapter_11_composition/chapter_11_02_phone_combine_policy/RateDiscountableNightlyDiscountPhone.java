@@ -3,7 +3,7 @@ package chapter_11_composition.chapter_11_02_phone_combine_policy;
 import java.time.Duration;
 
 public class RateDiscountableNightlyDiscountPhone 
-		extends NightlyDiscountPhone{
+			extends NightlyDiscountPhone {
 	private Money discountAmount;
 	
 	
