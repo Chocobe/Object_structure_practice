@@ -78,4 +78,15 @@
 	```
 	
 	
-1. next
+1. (365p) 두번째 코드블록의 클래스 명이 누락된 것 같습니다.
+
+	```java
+	public class TaxableAndDiscountableNightlyDiscountPhone {}
+	
+	// 다음과 같이 변경해야 할 것 같습니다.
+	
+	public class TaxableAndRateDiscountableNightlyDiscountPhone {}
+	```
+	
+	
+	
