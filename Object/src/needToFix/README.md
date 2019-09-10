@@ -90,3 +90,19 @@
 	
 	* (366p)와 (367p)의 클래스 다이어그램에는 해당 클래스명이 올바르게 적혀 있습니다. 
 	
+	
+1. (369p) 두번째 코드블록의 ``for()`` 문 내부의 ``plus``연산이 잘못된 것 같습니다.
+
+	```java
+	for(Call call : phone.getCalls()) {
+		
+		result.plus(calculateCallFee(call));
+		
+		// 위의 plus 연산은 결과를 반환값으로 보내는 쿼리문이었습니다.
+		// 그래서 아래와 같이 수정이 필요할 것 같습니다.
+		
+		result = result.plus(calculateCallFee(call));
+	}
+	
+	
+1. next
