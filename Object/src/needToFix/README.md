@@ -105,4 +105,13 @@
 	}
 	
 	
+1. (374p) 본문 두번째 문단의 마지막 문장을 수정해야 할 것 같습니다.
+
+	* 원본 : ``AddionalRatePolicy를 상속받은 자식 클래스는 calculateFee 메서드를 오버라이딩해서...``
+	
+	* 수정한다면 : ``AddionalRatePolicy를 상속받은 자식 클래스는 afterCalculated 메서드를 오버라이딩해서...``
+	
+	* 이유 : ``AddionalRatePolicy를 상속받는 자식 클래스가 자신의 정책을 구현하는 부분이 추상메서드인 afterCalculated 메서드를 오버라이딩 해야 한다고 이 책에서 배웠습니다``
+	
+	
 1. next
