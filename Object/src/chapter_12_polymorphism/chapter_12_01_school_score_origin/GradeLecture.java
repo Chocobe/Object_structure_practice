@@ -1,4 +1,4 @@
-package chapter_12_polymorphism.chapter_12_school_score_origin;
+package chapter_12_polymorphism.chapter_12_01_school_score_origin;
 
 import java.util.List;
 import static java.util.stream.Collectors.joining;

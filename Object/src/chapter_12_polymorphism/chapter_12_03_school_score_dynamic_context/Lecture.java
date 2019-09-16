@@ -1,4 +1,4 @@
-package chapter_12_polymorphism.chapter_12_school_score_upcasting;
+package chapter_12_polymorphism.chapter_12_03_school_score_dynamic_context;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -15,6 +15,17 @@ public class Lecture {
 		this.title = title;
 		this.pass = pass;
 		this.scores = scores;
+	}
+	
+	
+	public String stats() {
+		return String.format("Title: %s, Evaluation Method: %s", 
+						title, getEvaluationMethod());
+	}
+	
+	
+	public String getEvaluationMethod() {
+		return "Pass or Fail";
 	}
 	
 	

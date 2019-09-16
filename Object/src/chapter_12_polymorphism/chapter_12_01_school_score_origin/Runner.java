@@ -1,5 +1,4 @@
-package chapter_12_polymorphism.chapter_12_school_score_upcasting;
-
+package chapter_12_polymorphism.chapter_12_01_school_score_origin;
 import java.util.Arrays;
 
 public class Runner {

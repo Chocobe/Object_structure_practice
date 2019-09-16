@@ -1,4 +1,4 @@
-package chapter_12_polymorphism.chapter_12_school_score_origin;
+package chapter_12_polymorphism.chapter_12_01_school_score_origin;
 
 import java.util.ArrayList;
 import java.util.Collections;
