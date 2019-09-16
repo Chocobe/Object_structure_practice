@@ -15,6 +15,12 @@ public class GradeLecture extends Lecture {
 	}
 	
 	
+	@Override
+	public String getEvaluationMethod() {
+		return "Grade";
+	}
+	
+	
 	public double average(String gradeName) {
 		return grades.stream().
 						filter(each -> each.isName(gradeName)).
