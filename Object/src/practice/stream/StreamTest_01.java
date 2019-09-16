@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
-public class StreamTest_1 {
+public class StreamTest_01 {
 	public static void main(String[] args) {
 		List<String> list = Arrays.asList("Hello", "Java", "Hi", "Stream");
 		printLine();

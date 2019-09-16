@@ -3,7 +3,7 @@ package practice.stream;
 import java.util.Arrays;
 import java.util.List;
 
-public class StreamTest_9 {
+public class StreamTest_09 {
 	public static void main(String[] args) {
 		List<String> listStr = Arrays.asList("Hello", "Java", "Hi", "World");
 		

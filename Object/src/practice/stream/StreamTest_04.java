@@ -4,9 +4,9 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
-public class StreamTest_3 {
+public class StreamTest_04 {
 	public static void main(String[] args) {
-		List<String> list = Arrays.asList("Hello", "java");
+		List<String> list = Arrays.asList("hello", "world");
 		
 		int sum = 0;
 		for(int i = 0; i < list.size(); i++) {
