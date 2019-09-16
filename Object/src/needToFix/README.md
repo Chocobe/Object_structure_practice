@@ -119,9 +119,19 @@
 
 1. (423p) 코드블록에서 생성자의 매개변수 중 ``String name``은 부모 클래스들에서는 ``String title``로 정의되어 왔습니다.
 
-	* 원본 : ``public FormattedGradeLecture(String name, ...)``
+	* 원본 : 
+	```java
+	public FormattedGradeLecture(String name, ...) {
+		super(name, ...);
+	}
+	```
 	
-	* 수정 : ``public FormattedGradeLecture(String title, ...)``
+	* 수정 : 
+	```java
+	public FormattedGradeLecture(String title, ...) {
+		super(title, ...);
+	}
+	```
 	
 
 1. next
