@@ -1,4 +1,4 @@
-package chapter_12_polymorphism.chapter_12_school_score;
+package chapter_12_polymorphism.chapter_12_school_score_upcasting;
 
 import java.util.Arrays;
 
@@ -12,7 +12,7 @@ public class Runner {
 		
 		Lecture oop_2 = new GradeLecture(
 						"객체지향 프로그래밍", 
-						70, 
+						70,
 						Arrays.asList(81, 95, 75, 50, 45), 
 						Arrays.asList(
 								new Grade("A", 100, 95),

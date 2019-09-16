@@ -1,4 +1,4 @@
-package chapter_12_polymorphism.chapter_12_school_score;
+package chapter_12_polymorphism.chapter_12_school_score_upcasting;
 
 public class Grade {
 	private String name;
