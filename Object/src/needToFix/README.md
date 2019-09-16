@@ -115,3 +115,13 @@
 	
 	
 1. (396p) 세번째 코드블록에서 동일한 ``evaluate()``메서드가 두번 작성되어 있습니다.
+
+
+1. (423p) 코드블록에서 생성자의 매개변수 중 ``String name``은 부모 클래스들에서는 ``String title``로 정의되어 왔습니다.
+
+	* 원본 : ``public FormattedGradeLecture(String name, ...)``
+	
+	* 수정 : ``public FormattedGradeLecture(String title, ...)``
+	
+
+1. next
