@@ -1,6 +1,7 @@
 package chapter_12_polymorphism.chapter_12_school_score;
 
 import java.util.List;
+import static java.util.stream.Collectors.joining;
 
 public class GradeLecture extends Lecture {
 	private List<Grade> grades;
@@ -11,5 +12,28 @@ public class GradeLecture extends Lecture {
 					List<Integer> scores, List<Grade> grades) {
 		super(title, pass, scores);
 		this.grades = grades;
+	}
+	
+	
+	@Override
+	public String evaluate() {
+		return super.evaluate() + ", " + gradesStatistics();
+	}
+	
+	
+	private String gradesStatistics() {
+		return grades.stream().
+						map(grade -> format(grade)).
+						collect(joining(" ")); // import static ... 사용
+	}
+	
+	
+	private String format(Grade grade) {
+		return String.format("%s : %d", grade.getName(), gradeCount(grade));
+	}
+	
+	
+	private long gradeCount(Grade grade) {
+		return getScores().stream().filter(grade::include).count();
 	}
 }
