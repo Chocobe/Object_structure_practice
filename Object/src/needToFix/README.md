@@ -1,4 +1,4 @@
-#Object 오탈자
+#Object 오탈자 (초판)
 
 1. (13p) 클래스 다이어그램의 두번째 ``Audience`` --> ``TicketSeller`` 인것 같습니다.
 
@@ -134,4 +134,20 @@
 	```
 	
 
+1. (473p) 클래스 다이어그램에서 BasicRatePolicy 클래스의 추상클래스의 이름이 잘 못 되었습니다.
+
+	* 원본 : # calculateFee(call)
+	
+	* 수정 : #calculateCallFee(call)
+	
+
+1. (482p) 코드블록에서 addMiddleDays 클래스의 루프 조건이 잘 못 된것 같습니다.
+
+	* 원본 : ``for(int loop = 1; loop < days; loop++) {}``
+	
+	* 수정 : ``for(int loop = 1; loop < (days - 1); loop++) {}``
+	
+	* addMiddleDays 클래스는 통화의 첫날과 마지막 날을 제외한 연산인데, 마지막 날까지 포함됩니다.
+	
+	
 1. next
